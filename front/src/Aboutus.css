@@ -1,0 +1,54 @@
+/* About Us Styles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.overview-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-img {
+  width: 100%;
+  height: 25vh; /* Set the height to a quarter of the view height */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-img:hover {
+  transform: scale(1.05); /* Add a hover effect for zoom-in */
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.text-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.text-center {
+  text-align: center;
+}

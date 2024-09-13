@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import Aboutus from './Aboutus';
 import Contactus from './Contactus';
+import Gallery from './Gallery';
 
 // Main Home component
 function Home() {
@@ -10,27 +11,19 @@ function Home() {
       {/* Hero Section */}
       <div 
         className='hero-container-main' 
-        style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1665342459344-a762784e8c9a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")', 
-          backgroundSize: 'cover', 
-          backgroundPosition: 'center', 
-          height: '100vh', 
-          display: 'flex', 
-          justifyContent: 'center', 
-          alignItems: 'center', 
-          color: 'white'
-        }}
+        style={styles.heroContainer}
       >
         <section style={styles.heroSection}>
           <div style={{ textAlign: 'center' }}>
             <h1 style={styles.heroTitle}>BEULLAH LIMITED</h1>
             <p style={styles.heroSubtitle}>Your success is our priority.</p>
+            <button style={styles.heroButton}>Learn More</button>
           </div>
         </section>
       </div>
 
       {/* Services Section */}
-      <section id="gallery" style={styles.cardSection}>
+      <section id="services" style={styles.cardSection}>
         <h2 style={styles.sectionTitle}>Our Featured Services</h2>
         <div style={styles.cardContainer}>
           {services.map((service, index) => (
@@ -51,7 +44,7 @@ function Home() {
       </section>
 
       {/* Clients Section */}
-      <div style={{ background: 'white', padding: '40px 0' }}>
+      <div style={{ background: '#f4f4f9', padding: '60px 0' }}>
         <section style={styles.clientsSection}>
           <h2 style={styles.sectionTitle}>Our Clients</h2>
           <div style={styles.clientsContainer}>
@@ -63,6 +56,11 @@ function Home() {
           </div>
         </section>
       </div>
+
+      {/* Gallery Section */}
+      <section id="gallery" style={{ backgroundColor: '#fff', padding: '60px 0' }}>
+        <Gallery />
+      </section>
 
       {/* Contact Us Section */}
       <section id="contactus">
@@ -83,31 +81,57 @@ const styles = {
     maxWidth: '100%',
     color: '#333',
   },
-  heroSection: {
+  heroContainer: {
+    backgroundImage: 'url("https://images.unsplash.com/photo-1665342459344-a762784e8c9a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
     color: 'white',
+  },
+  heroSection: {
     textAlign: 'center',
     padding: '50px',
     background: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
     borderRadius: '8px',
+    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
   },
   heroTitle: {
     fontSize: '4rem',
     fontWeight: 'bold',
     margin: '0',
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+    lineHeight: '1.2',
   },
   heroSubtitle: {
     fontSize: '1.8rem',
     marginTop: '10px',
+    marginBottom: '30px',
     textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+  },
+  heroButton: {
+    padding: '10px 20px',
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    backgroundColor: '#002b45',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
   },
   cardSection: {
     margin: '20px 0 120px 0',
+    padding: '60px 0',
+    backgroundColor: '#f9f9f9',
   },
   sectionTitle: {
     fontSize: '36px',
     fontWeight: 'bold',
-    margin: '80px 0 50px',
+    margin: '0 0 50px',
     textAlign: 'center',
     color: '#002b45',
   },
@@ -125,6 +149,7 @@ const styles = {
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
     textAlign: 'center',
     backgroundColor: '#fff',
+    cursor: 'pointer',
   },
   cardImage: {
     width: '100%',
@@ -143,6 +168,10 @@ const styles = {
   cardText: {
     fontSize: '16px',
     color: '#666',
+  },
+  cardHover: {
+    transform: 'scale(1.05)',
+    boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
   },
   clientsSection: {
     textAlign: 'center',
